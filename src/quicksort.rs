@@ -17,22 +17,12 @@ fn partition(items: &mut [i32]) -> usize {
     let mut small_index = 0;
 
     for i in 0..vec_len - 1 {
-        println!(
-            "\x1b[31m{:?} => P: {pivot} | SI: {small_index} | i: {i}",
-            items
-        );
         if items[i] <= items[pivot] {
             items.swap(small_index, i);
             small_index += 1;
         }
-        println!(
-            "\x1b[92m{:?} => P: {pivot} | SI: {small_index} | i: {i}",
-            items
-        );
     }
     items.swap(small_index, pivot);
-    println!("\x1b[93m{:?} => P: {pivot} | SI: {small_index}", items);
-    println!("----------- ... ------------");
 
     small_index
 }
